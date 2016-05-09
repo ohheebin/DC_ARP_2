@@ -57,6 +57,12 @@ using namespace std;
 #define ARP_OPCODE_REPLY		0x0002
 #define ARP_HEADER_SIZE			28
 
+#define IP_HEADER_SIZE			( sizeof(unsigned short) * 4 +	\
+								  sizeof(unsigned char) * 12  )
+#define IP_DATA_SIZE			( ETHER_MAX_SIZE - (	ARP_HEADER_SIZE + \
+														IP_HEADER_SIZE  + \
+														ETHER_HEADER_SIZE ))
+
 #define CACHE_INCOMPLETE		0x00
 #define CACHE_COMPLETE			0x01
 #define CACHE_TTL				10
